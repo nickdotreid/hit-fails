@@ -10,8 +10,7 @@ urlpatterns = patterns("",
 
     # Admin URLs.
     url(r"^admin/", include(admin.site.urls)),
-    
     # There's no favicon here!
     url(r"^favicon.ico$", generic.RedirectView.as_view()),
-    
+    url(r"^", include('homepage.urls')),
 )
