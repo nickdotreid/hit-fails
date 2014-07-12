@@ -7,6 +7,9 @@ class Vendor(models.Model):
     def __unicode__(self):
         return self.vendor_name
 
+    class Meta:
+        ordering = ['vendor_name']
+
 class Submission(models.Model):
     title = models.CharField(max_length = 128)
     description = models.CharField(max_length = 1024)
@@ -20,6 +23,15 @@ class Submission(models.Model):
     def __unicode__(self):
         return self.title
 
+    def has_description(self):
+        if self.description:
+            return True
+        else:
+            return False
+
+    def tags(self):
+        return self.tag_set.all()
+    
 class Image(models.Model):
     image_path = models.CharField(max_length = 1024)
     submission_id = models.ForeignKey(Submission)
@@ -35,3 +47,8 @@ class Tag(models.Model):
 
     def __unicode__(self):
         return(self.tag_text)
+
+    class Meta:
+        ordering = ['tag_text']
+
+    
