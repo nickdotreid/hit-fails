@@ -13,7 +13,7 @@ class Vendor(models.Model):
 class Submission(models.Model):
     title = models.CharField(max_length = 128)
     description = models.CharField(max_length = 1024)
-    name = models.CharField(max_length = 64)
+    name = models.CharField(max_length = 128, null=True, blank=True)
     location = models.CharField(max_length = 64, null=True, blank=True)
     vendor = models.ForeignKey(Vendor, null=True, blank=True)
     software = models.CharField(max_length = 128, null=True, blank=True)
