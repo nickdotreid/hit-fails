@@ -148,11 +148,13 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.admin",
     "south",
+    "crispy_forms",
     "herokuapp",
     "fails",
     "homepage",
 )
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Additional static file locations.
 
