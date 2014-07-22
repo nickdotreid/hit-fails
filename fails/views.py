@@ -28,7 +28,7 @@ class SubmissionForm(forms.ModelForm):
         self.helper.layout = Layout(
             Fieldset(
                 "What software package are you talking about?",
-                'vendor_id',
+                'vendor',
                 'software',
                 'location',
                 ),

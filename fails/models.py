@@ -14,9 +14,9 @@ class Submission(models.Model):
     title = models.CharField(max_length = 128)
     description = models.CharField(max_length = 1024)
     name = models.CharField(max_length = 64)
-    location = models.CharField(max_length = 64)
-    vendor_id = models.ForeignKey(Vendor)
-    software = models.CharField(max_length = 128)
+    location = models.CharField(max_length = 64, null=True, blank=True)
+    vendor = models.ForeignKey(Vendor, null=True, blank=True)
+    software = models.CharField(max_length = 128, null=True, blank=True)
     upvotes = models.IntegerField(default = 0)
     created = models.DateTimeField(auto_now_add=True)
 
