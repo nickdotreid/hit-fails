@@ -38,7 +38,7 @@ class Image(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return("Submission {} - {}".format(str(self.submission_id), self.image_path)
+        return "Submission {} - {}".format(str(self.submission_id), self.image_path)
 
 class Tag(models.Model):
     tag_text = models.CharField(max_length = 32)
